@@ -29,12 +29,8 @@ def create_character(
     for stat in stats.values():
         if not isinstance(stat, int):
             return "All stats should be integers"
-    
-    for stat in stats.values():
         if stat < 1:
             return "All stats should be no less than 1"
-    
-    for stat in stats.values():
         if stat > 4:
             return "All stats should be no more than 4"
     

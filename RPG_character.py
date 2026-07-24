@@ -2,7 +2,7 @@ full_dot = '●'
 empty_dot = '○'
 
 def create_character(
-        name,
+        char_name,
         strength,
         intelligence,
         charisma
@@ -29,19 +29,15 @@ def create_character(
     for stat in stats.values():
         if not isinstance(stat, int):
             return "All stats should be integers"
-    
-    for stat in stats.values():
         if stat < 1:
             return "All stats should be no less than 1"
-    
-    for stat in stats.values():
         if stat > 4:
             return "All stats should be no more than 4"
     
     if sum(stats.values()) != 7 :
         return "The character should start with 7 points"
 
-    character_string = name
+    character_string = char_name
     
     for key in ['STR', 'INT', 'CHA']:
         stat = stats[key]
